@@ -200,13 +200,11 @@ async function getDOMFromFile(shopID, dataAssetKey) {
 
 async function getShopID() {
     try {
-        const url = `https://${window.location.host}/shop.json`;
-        const result = await fetch(url);
-        const res = await result.text();
+        const url = window.location.href;
+        const regex = /[0-9]+$/m;
+        const shopID = regex.exec(url);
 
-        const regex = /Shopify.theme = (.*?);$/m;
-        const ex = regex.exec(res);
-        const shopID = JSON.parse(ex[1]).id;
+        console.log(shopID[0]);
 
         return shopID;
     } catch (error) {
