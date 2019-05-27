@@ -8,7 +8,7 @@
     "author": "Thong Pham",
     "background": {
         "persistent": false,
-        "scripts": ["assets/js/vendors.js", "assets/js/background.js"]
+        "scripts": ["assets/js/background.js"]
     },
     "content_scripts": [
         {
